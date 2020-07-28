@@ -4,7 +4,15 @@ const helloWorld = () => {
 }
 
 const sayHello = name => {
-    if (typeof(name) === "string" && name !== '' && isNaN(name))
+    if (typeof(name) === "string" && isNaN(name))
         return "Hello, " + name + "!";
     return "Hello, World!"
+}
+
+const isFive = num => {
+
+    if (num === 5 || num === "5")
+        return true;
+
+    return false;
 }
