@@ -4,5 +4,7 @@ const helloWorld = () => {
 }
 
 const sayHello = name => {
-    return "Hello, " + name + "!";
+    if (typeof(name) === "string" && name !== '' && isNaN(name))
+        return "Hello, " + name + "!";
+    return "Hello, World!"
 }
