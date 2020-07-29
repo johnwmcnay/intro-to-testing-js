@@ -51,8 +51,10 @@ describe('sayHello', function() {
     it('should return the string "Hello, World!" when executed with "5"', function() {
         expect(sayHello("5")).toBe("Hello, World!")
     });
-    it('should return the string "Hello, World!" when executed with an array', function() {
-        expect(sayHello([1, 2, 3])).toBe("Hello, World!")
+    it('should return the string "Hello, World!" when executed with array, object, or function', function() {
+        expect(sayHello([1, 2, 3])).toBe("Hello, World!");
+        expect(sayHello(helloWorld)).toBe("Hello, World!");
+        expect(sayHello({name: "John", age: 38})).toBe("Hello, World!");
     });
 });
 
@@ -127,8 +129,26 @@ describe('isVowel', function() {
     it('should return false when executed with a multi-character string', function() {
         expect(isVowel("banana")).toBe(false);
     });
-    // it('should return true when executed with "5"', function() {
-    //     expect(isFive("5")).toBe(true);
-    // });
+});
 
+describe('add', function() {
+    it('should be a defined function', function () {
+        expect(typeof add).toBe('function');
+    });
+    it('should return a "number"/NaN even with no arguments', function() {
+        expect(typeof add()).toBe("number");
+        expect(isNaN(add())).toBe(true);
+    });
+    it('should return the calculated value when executed with two numbers', function() {
+        expect(add(2, 3)).toBe(5);
+        expect(add(-3, -9)).toBe(-12);
+    });
+    it('should return the calculated value when one or both arguments are strings containing numbers', function() {
+        expect(add("5", 6)).toBe(11);
+        expect(add("-4", "10")).toBe(6);
+    });
+    it('should return NaN when executed with strings that are not numbers', function() {
+        expect(isNaN(add("banana", "split"))).toBe(true);
+        expect(isNaN(add(2, "split"))).toBe(true);
+    });
 });

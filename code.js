@@ -41,3 +41,8 @@ const isVowel = str => {
 
     return false;
 }
+
+const add = (num1, num2) => {
+    return (Number(num1) + Number(num2));
+}
+
