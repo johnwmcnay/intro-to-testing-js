@@ -16,3 +16,17 @@ const isFive = num => {
 
     return false;
 }
+
+const isEven = num => {
+
+    if (typeof num === "boolean")
+        return false;
+
+    const remainder = num % 2;
+
+    if (! isNaN(remainder)) {
+        return remainder === 0;
+    }
+
+    return false;
+}
