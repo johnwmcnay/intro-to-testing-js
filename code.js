@@ -30,3 +30,14 @@ const isEven = num => {
 
     return false;
 }
+
+const isVowel = str => {
+
+    const vowels = "aeiou";
+
+    if (typeof str === "string" && str.length === 1) {
+        return (vowels.indexOf(str.toLowerCase()) !== -1);
+    }
+
+    return false;
+}
